@@ -1,0 +1,15 @@
+cliente  =>  Modulo del lado del cliente
+
+db  =>  Configuracion de la base de datos
+
+main  =>  Archivo index de toda mi aplicacion
+
+server  => Modulo del lado del servidor
+
+           Domain  => Clases del dominio del problema
+
+           Http  => Controladores de mi app
+
+           infraestructure  => Clases de ltipo repositorio que contendran toda la logica de las
+              queries a la base de datos
+
