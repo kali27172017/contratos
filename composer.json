@@ -1,0 +1,16 @@
+{
+    "name": "jorge/contratos",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kali27172017",
+            "email": "jorgewilliamreyes26@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}

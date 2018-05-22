@@ -1,4 +1,8 @@
-cliente  =>  Modulo del lado del cliente
+client_dev  =>  Modulo del lado del cliente para desarrollo
+
+client_prod  => Modulo del lado del cliente que contiene todo el codigo minificado 
+   ya listo para produccion
+
 
 db  =>  Configuracion de la base de datos
 
