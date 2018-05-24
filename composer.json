@@ -12,5 +12,11 @@
             "App\\": "app/"
         }
     },
-    "require": {}
+    "require": {
+         "twig/twig": "~2.0",
+        "vlucas/phpdotenv": "^2.4",
+        "illuminate/http": "^5.4",
+        "illuminate/view": "^5.4",
+        "illuminate/routing": "^5.4"
+    }
 }
