@@ -1,0 +1,50 @@
+body{
+	background: #F7F7FA;
+}
+
+.form{
+	display:grid;
+	grid-template-columns:50vh;
+	margin: 100px auto;
+	height:30vh;
+	width:400px;
+	padding:10px;
+	grid-gap: .8em;
+    background: white;
+    justify-content:center;
+}
+
+
+.form > label {
+	color:#435a6f;
+}
+
+
+.form > input[type="text"], .form > input[type="password"]{
+    border-radius:4px;
+    border:0px;
+    border:1px solid gray;
+    outline:none;
+    padding:8px;
+}
+
+.form > input[type="submit"]{
+	 color:white;
+	 background:#00B775;
+	 border:0px;
+	 border-radius:5px;
+	 padding: 9px;
+	 font-weight:bold;
+}
+
+
+
+.form h3{
+	color:#1f4160;
+	text-align:center;
+}
+
+
+
+
+

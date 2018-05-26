@@ -3,25 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Administrador</title>
-	  <link rel="stylesheet" href="http://localhost:9000/css/admin.css">
+	  <link rel="stylesheet" href="http://localhost:9000/css/admin.css" type="text/css">
 </head>
 <body>
-	<fieldset class="form">
-		<p class="form-title">Login Administrador</p>
-		<form action="post" class="form-login">
-			<div class="form-div">
+	
+		
+		<form method="post" class="form"  id="form">
+                <h3>LOGIN ADMINISTRADOR</h3>
 				<label for="administrador">Usuario</label>
 			    <input type="text" name="administrador" id="administrador">
-			</div>
-			<div class="form-div">
+			
+		
 				<label for="clave">Clave</label>
 			    <input type="password" name="clave" id="clave" required>
-			</div>
-			<div class="form-submit">
-				<input type="submit" value="Ingresar" required>
-			</div>
+			
+			
+				<input type="submit" value="Ingresar"  class="form_submit" required>
 		</form>
 	</fieldset>
-	  <script src="http://localhost:9000/js/admin.js"></script>
+	   <script src="http://localhost:9000/js/admin.js"> </script>
 </body>
 </html>

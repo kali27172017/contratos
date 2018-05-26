@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "client_dev  =>  Modulo del lado del cliente para desarrollo",
   "main": "webpack.config.js",
-  "scripts":{
+  "scripts": {
     "build:dev": "webpack-dev-server --config ./webpack.config.js",
-    "build:prod": "webpack --config ./webpack.config.js"
+    "build:prod": "webpack --config ./webpack.config.js "
   },
   "keywords": [],
   "author": "rejore <jorge27_07@hotmail.com>",
@@ -22,5 +22,8 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }
