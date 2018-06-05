@@ -6,34 +6,56 @@ body{
 	display:grid;
 	grid-template-columns:50vh;
 	margin: 100px auto;
-	height:30vh;
-	width:400px;
+	height:43vh;
+	width:500px;
 	padding:10px;
-	grid-gap: .8em;
+	padding-bottom:30px;
+	grid-gap: 1em;
     background: white;
     justify-content:center;
 }
 
 
-.form > label {
+div > label {
 	color:#435a6f;
+	font-weight:bold;
 }
 
 
-.form > input[type="text"], .form > input[type="password"]{
+div > input[type="text"], div > input[type="password"]{
     border-radius:4px;
     border:0px;
     border:1px solid gray;
     outline:none;
-    padding:8px;
+    padding:9px;
+    width:200px;
 }
+
+.form_admin  input[type="text"]{
+   margin-left:20px;
+}	
+
+
+
+.form_clave  input[type="password"]{
+   margin-left:34px;
+}
+
+.icon_admin,.icon_clave{
+	position:relative;
+	right:25px;
+}
+
+
+
+
 
 .form > input[type="submit"]{
 	 color:white;
 	 background:#00B775;
 	 border:0px;
 	 border-radius:5px;
-	 padding: 9px;
+	 padding:5px;
 	 font-weight:bold;
 }
 
@@ -43,6 +65,34 @@ body{
 	color:#1f4160;
 	text-align:center;
 }
+
+
+
+
+
+/*helpers*/
+
+.check{
+   color:green;
+}
+
+
+.cross{
+	color:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

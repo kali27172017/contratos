@@ -10,44 +10,23 @@ class View
 
     private $params;
 
+    public $templateEngine;
+
     public function __construct($template, array $params = [])
     {
+        $loader = new \Twig_Loader_Filesystem('../views');
+        $this->templateEngine = new \Twig_Environment($loader,[
+            'debug' => true,
+            'cache' => false
+        ]);
         $this->template = $template;
         $this->params = $params;
     }
 
-    /**
-     * @return Response
-     */
+  
     public function render()
     {
-        $content = $this->loadTemplate();
+         return $this->templateEngine->render($this->template,$this->params);
 
-        $response = new Response($content);
-        return $response;
-    }
-
-    private function loadTemplate()
-    {
-        $path = dirname(dirname(dirname(__DIR__))) .
-        '/views';
-
-        $templatePath = "$path/{$this->template}.twig";
-
-        return $this->includeTemplateFromFile(
-            $templatePath,
-            $this->params
-        );
-    }
-
-    private function includeTemplateFromFile($path, $params)
-    {
-        if (file_exists($path)) {
-            extract($params);
-
-            ob_start();
-            require $path;
-            return ob_get_clean();
-        }
     }
 }

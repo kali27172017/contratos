@@ -6,6 +6,7 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 class Application
 {
@@ -24,11 +25,12 @@ class Application
         );
 
         $router->get('/', LoginController::class . '@index');
-        $router->post('login', LoginController::class . '@prueba');
+        $router->post('/', LoginController::class . '@showMessageLogin');
+        $router->get('dashboard', DashboardController::class . '@index');
+        $router->get('exit', DashboardController::class . '@exit');
         //$router->get('/post/{id}', HomeController::class . '@show');
 
         $response = $router->dispatch(Request::capture());
-
         $response->send();
     }
 }

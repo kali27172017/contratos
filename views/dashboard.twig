@@ -1,0 +1,47 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+  <div class="dashboard-welcome">
+  	  <h3>Dashboard Administrador</h3>
+  	  <h4>!Bienvenido Jorge !
+         <a href="http://localhost:8080/app_contratos/public/exit"><i class="fas fa-sign-out-alt"></i></a>
+  	  </h4>
+  </div> 	  
+  <div class="dashboard-welcomeContent">
+  	       <h3>Registrar Docente</h3>
+           <form method="post" class="register"  id="formRegister"  action="">
+                <div class="register_nombre">
+            	  <label for="nombre">Nombre</label>
+			      <input type="text" name="nombre" id="nombre" required>	
+                </div>
+			
+			    <div class="register_apellido">
+			      <label for="apellido">Apellido</label>
+			      <input type="text" name="apellido" id="apellido" required>	
+			    </div>
+
+			    <div class="register_dni">
+			      <label for="dni">Dni</label>
+			      <input type="text" name="dni" id="dni" required>	
+			    </div>
+
+			    <div class="register_domicilio">
+			      <label for="domicilio">Domicilio</label>
+			      <input type="text" name="domicilio" id="domicilio" required>	
+			    </div>
+
+			     <!--<div class="register_grado">
+			      <label for="">Apellido</label>
+			      <input type="text" name="apellido" id="apellido" required>	
+			    </div>
+
+			    <div class="register_apellido">
+			      <label for="apellido">Apellido</label>
+			      <input type="text" name="apellido" id="apellido" required>	
+			    </div>-->
+				
+				<input type="submit" value="REGISTRAR"  class="register_submit">
+		</form>    
+  </div>
+
+{% endblock %}

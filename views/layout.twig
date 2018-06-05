@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="http://localhost:9000/css/dashboard.css" type="text/css">
+</head>
+<body>
+
+    <main class="dashboard">
+        
+        <div class="dashboard-options">
+               <h3 class="dashboard-optionsTitle">Contracts Aplication</h3>
+               <ul class="dashboard-optionsList">
+                   <li><i class="fas fa-book"></i><a href="#">Registro</a></li>
+                   <li><i class="fas fa-book-open"></i><a href="#">Contrato</a></li>
+                   <li><i class="fas fa-history"></i><a href="#">Historial</a></li>
+               </ul>
+
+        </div>
+        
+        <div class="dashboard-content">
+           {% block content %}{% endblock %}
+        </div>
+
+    </main>
+
+    <script src="http://localhost:9000/js/dashboard.js"> </script>
+ </body>
+</html>

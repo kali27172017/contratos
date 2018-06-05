@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+@import "./dashboard_register.css";
+
+body{
+	margin:0;
+	padding:0;
+}
+
+.dashboard{ 
+   display:grid;
+   grid-template-columns: 24% 75%;
+   grid-column-gap:15px;
+   height:100vh;
+   position:fixed;
+}
+
+
+.dashboard-options{
+	background:#00B674;
+}
+
+
+
+
+.dashboard-optionsTitle{
+	color:white;
+	font-family:'Roboto';
+	text-align:center;
+	padding-bottom:.5em;
+}
+
+
+.dashboard-optionsList{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.dashboard-optionsList li{
+	margin:1em 0;
+	margin-left:1.2em;
+	padding:0 .5em;
+	width:170px;
+	line-height:3px;
+	transition:1s;
+	position:relative;
+}
+
+.dashboard-optionsList a{
+	text-decoration:none;
+	font-size:.9em;
+	font-family:'Roboto';
+	box-sizing:border-box;
+	height:15px;
+	padding:1em 2em;
+	display:block;
+	color:white;
+}
+
+.dashboard-optionsList .fa-book,.fa-book-open,.fa-history{
+	color:white;
+	font-weight:bold;
+	position:absolute;
+	top:.4em;
+}
+
+.dashboard-optionsList li:nth-child(1){
+    background:#54DF3D;
+}
+
+.dashboard-optionsList li:hover{
+	background:#54DF3D;
+}
+
+
+.dashboard-content{
+	background:#F7F7FA;
+}
+
+
+
+
+
