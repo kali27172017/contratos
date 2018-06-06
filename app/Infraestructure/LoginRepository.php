@@ -2,6 +2,7 @@
 namespace App\Infraestructure;
 
 use App\db\Conexion;
+use App\Helpers\Session;
 
 
 class LoginRepository extends Conexion{
@@ -32,10 +33,10 @@ class LoginRepository extends Conexion{
 
 
      public  function validateResponse($data){
-     	 $this->setAdmin($data["admin"]);
-     	 $this->setClave($data["clave"]);
-
-     	 $admin = $this->getAdmin();
+     	   $this->setAdmin($data["admin"]);
+     	   $this->setClave($data["clave"]);
+         
+     	   $admin = $this->getAdmin();
          $password = $this->getClave();
          return $this->compareToUser($admin,$password);
      }
@@ -43,7 +44,6 @@ class LoginRepository extends Conexion{
 
 
        public function  compareToUser($admin,$password){
-
        	 $bandera  = [];
          $stmt = $this->pdo->prepare("select  * from administrador where user_admin = :admin and  password_admin = :clave" );
          $stmt->setFetchMode(\PDO::FETCH_ASSOC);

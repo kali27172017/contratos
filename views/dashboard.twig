@@ -3,8 +3,11 @@
 {% block content %}
   <div class="dashboard-welcome">
   	  <h3>Dashboard Administrador</h3>
-  	  <h4>!Bienvenido Jorge !
-         <a href="http://localhost:8080/app_contratos/public/exit"><i class="fas fa-sign-out-alt"></i></a>
+  	  <h4>!Bienvenido 
+					{%  if usuario %}
+							<strong>{{ usuario }} </strong>
+				  {% endif %} 
+         <a href="http://localhost:8080/contratos/public/"><i class="fas fa-sign-out-alt"></i></a>
   	  </h4>
   </div> 	  
   <div class="dashboard-welcomeContent">

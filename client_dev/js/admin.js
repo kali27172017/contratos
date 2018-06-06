@@ -22,7 +22,7 @@ let formLogin = (e)  => {
 let formRequestAjax  = (...data) => {
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8080/app_contratos/public/",
+		url: "http://localhost:8080/contratos/public/",
 		data:{admin:data[0],clave:data[1]}
 	})
 	.done((clase) => {

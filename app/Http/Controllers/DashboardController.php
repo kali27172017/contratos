@@ -3,18 +3,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Http\Views\View;
+use App\Http\Controllers\BaseController;
 
 
-class DashboardController extends Controller{
+class DashboardController extends BaseController{
 
-	public function index(){
-		  $view = new View('dashboard.twig');
-           return $view->render();
+	public function index(){	
+		  $usuario  = $_SESSION["admin"];
+		  return $this->render('dashboard.twig',['usuario' => $usuario]);
 	}
 
 	public function exit(){
-		  $view  = new View('login_admin.twig');
-     	  return $view->render();
+		return $this->render('login_admin.twig');
 	}
 }
