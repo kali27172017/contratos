@@ -12,8 +12,7 @@ body{
    grid-template-columns: 24% 75%;
    grid-column-gap:15px;
    height:100vh;
-   position:fixed;
-}
+ }
 
 
 .dashboard-options{

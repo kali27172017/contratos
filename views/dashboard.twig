@@ -12,39 +12,74 @@
   </div> 	  
   <div class="dashboard-welcomeContent">
   	       <h3>Registrar Docente</h3>
-           <form method="post" class="register"  id="formRegister"  action="">
+           <form method="post" class="register"  id="formRegister" name="fregister">
                 <div class="register_nombre">
             	  <label for="nombre">Nombre</label>
-			      <input type="text" name="nombre" id="nombre" required>	
+			      <input type="text" name="nombre" id="nombre" >	
                 </div>
 			
 			    <div class="register_apellido">
 			      <label for="apellido">Apellido</label>
-			      <input type="text" name="apellido" id="apellido" required>	
+			      <input type="text" name="apellido" id="apellido" >	
 			    </div>
 
 			    <div class="register_dni">
 			      <label for="dni">Dni</label>
-			      <input type="text" name="dni" id="dni" required>	
+			      <input type="text" name="dni" id="dni">	
+			    </div>
+
+			    <div class="register_fecha">
+			      <label for="register_fecha">Fecha Nacimiento</label>
+			      <input type="date" name="fecha" id="fecha" value={{fecha}}>
 			    </div>
 
 			    <div class="register_domicilio">
 			      <label for="domicilio">Domicilio</label>
-			      <input type="text" name="domicilio" id="domicilio" required>	
+			      <input type="text" name="domicilio" id="domicilio" >	
 			    </div>
 
-			     <!--<div class="register_grado">
-			      <label for="">Apellido</label>
-			      <input type="text" name="apellido" id="apellido" required>	
+			 
+
+			    <div class="register_grado">
+			        <label for="register_grado">Grado Docente</label>
+			        <select name="grados" id="grados" class="grados">
+			        	  {% for grado in grados %}
+								<option value="{{grado.id_grado}}">{{grado.grado}}</option>
+			        	  {% endfor %}	
+			        </select>	
 			    </div>
 
-			    <div class="register_apellido">
-			      <label for="apellido">Apellido</label>
-			      <input type="text" name="apellido" id="apellido" required>	
-			    </div>-->
+			     <div class="register_escuela">
+                    <label for="register_escuela">Escuela</label> 
+			    	<select name="escuelas" id="escuelas" class="escuelas" required>
+			    		  {% for escuela in escuelas %}
+                              <option  value="{{escuela.id_escuela}}">{{escuela.nombre_escuela}}</option>
+			    		  {% endfor %}	
+			    	</select>
+					
+			    </div>
+
+			    
+			    <div class="register_ciclo">
+			    	 <label for="register_ciclo">Ciclo Academico</label>
+			    	 <input type="text" name="ciclo" id="ciclo" placeholder="Ejemplo: 2018-I" >  
+			    </div>
+
+			    <div class="register_fechainicio">
+			       <label for="register_fechainicio">Fecha Inicio Ciclo</label>
+				   <input type="date" name="fecha_iniciociclo" id="fecha_iniciociclo" value={{fecha}}>					    	
+			    </div>
+
+			    <div class="register_fechafin">
+			    	<label for="register_fechafin">Fecha Fin Ciclo</label>
+			    	<input type="date" name="fecha_finciclo" id="fecha_finciclo">
+			    </div>
 				
-				<input type="submit" value="REGISTRAR"  class="register_submit">
+				<input type="submit" value="REGISTRAR" id="register_submit" class="register_submit">
 		</form>    
   </div>
-
 {% endblock %}
+
+{% block script %}
+	<script src="http://localhost:9000/js/dashboard.js"> </script>
+{% endblock %}	

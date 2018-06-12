@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="http://localhost:9000/css/dashboard.css" type="text/css">
+    {%  block head %}
+     <link rel="stylesheet" href="http://localhost:9000/css/dashboard.css" type="text/css">
+    {% endblock %} 
 </head>
 <body>
 
@@ -12,9 +14,9 @@
         <div class="dashboard-options">
                <h3 class="dashboard-optionsTitle">Contracts Aplication</h3>
                <ul class="dashboard-optionsList">
-                   <li><i class="fas fa-book"></i><a href="#">Registro</a></li>
-                   <li><i class="fas fa-book-open"></i><a href="#">Contrato</a></li>
-                   <li><i class="fas fa-history"></i><a href="#">Historial</a></li>
+                   <li><i class="fas fa-book"></i><a href="dashboard">Registro</a></li>
+                   <li><i class="fas fa-book-open"></i><a href="contract">Contrato</a></li>
+                   <li><i class="fas fa-history"></i><a href="history">Historial</a></li>
                </ul>
 
         </div>
@@ -25,6 +27,6 @@
 
     </main>
 
-    <script src="http://localhost:9000/js/dashboard.js"> </script>
+     {% block  script  %}{% endblock %}
  </body>
 </html>

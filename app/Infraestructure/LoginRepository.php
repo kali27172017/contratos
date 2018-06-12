@@ -33,13 +33,16 @@ class LoginRepository extends Conexion{
 
 
      public  function validateResponse($data){
+
+           Session::sessionUSer($data); 
      	   $this->setAdmin($data["admin"]);
      	   $this->setClave($data["clave"]);
          
      	   $admin = $this->getAdmin();
-         $password = $this->getClave();
-         return $this->compareToUser($admin,$password);
+           $password = $this->getClave();
+           return $this->compareToUser($admin,$password);
      }
+
 
 
 

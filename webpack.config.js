@@ -5,7 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
     entry:{
        admin:path.resolve(__dirname,'client_dev/js/admin.js'),
-       dashboard:path.resolve(__dirname,'client_dev/js/dashboard.js')
+       dashboard:path.resolve(__dirname,'client_dev/js/dashboard.js'),
+       contract:path.resolve(__dirname,'client_dev/js/contract.js'),
+       history:path.resolve(__dirname,'client_dev/js/history.js')
     },
     output:{
         path: path.resolve(__dirname,'dist'),

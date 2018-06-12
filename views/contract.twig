@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+
+
+{% block head %}
+      {{ parent() }}
+       <link rel="stylesheet" href="http://localhost:9000/css/contract.css" type="text/css">
+{%  endblock %}
+
+
+{% block content %}
+  
+     <div class="dashboard-contractContent">
+  	       <h3>Generar Contrato</h3>
+           <form method="post" class="contract"  id="formContract" name="fcontract">
+
+                <div class="search-teacher">
+            	  <label for="search-dni">Buscar Docente</label>
+			      <input type="text" name="searc-dni" id="search-dni" placeholder="Buscar Por Dni">	
+                </div>
+			
+			    <div class="search-benefit">
+			      <label for="apellido">Seleccione Tipo Prestacion</label>
+			      Tiempo Completo:<input type="radio" name="benefit" id="benefit">
+			      Tiempo Parcial:<input type="radio" name="benefit" id="benefit">	
+			    </div>
+
+			    <input type="submit" value="Guardar Contrato" id="saveContract">
+	        </form>		    
+     </div>
+   
+{% endblock %}
+
+{% block script %}
+	<script src="http://localhost:9000/js/contract.js"> </script>
+{% endblock %}	

@@ -28,7 +28,7 @@
 
 
 .dashboard-welcomeContent{
-    margin-top:30px;
+    margin-top:15px;
 }
 
 
@@ -38,6 +38,7 @@
 	border-bottom:.3px solid #1F2850;
 	padding-bottom:.3em;
 	width:80%;
+  margin:0;
 
 }
 
@@ -45,21 +46,21 @@
 .dashboard-welcomeContent form{
 	display:grid;
 	width:600px;
-	grid-gap:10px;
+	grid-gap:8px;
 	padding:1em;
 }
 
 .dashboard-welcomeContent  input[type="text"]{
-	width: 71%;
+	  width: 70%;
     border: 0;
     border:.5px solid #213F62;
-    padding: .7em;
-    margin: .5em 0;
+    padding: .5em;
+    margin: .3em 0;
 }
 
 
 .dashboard-welcomeContent input[type="submit"]{
-   width: 75%;
+   width: 73%;
    border: 0;
    padding: .9em;
    margin: .5em 0;
@@ -68,10 +69,40 @@
    background:#00B674;
 }
 
+
+.dashboard-welcomeContent input[type="date"]{
+    width: 70%;
+    border: 0;
+    border:.5px solid #213F62;
+    padding: .5em;
+    margin: .7em 0;
+}
+
+
+.dashboard-welcomeContent .grados{
+    width: 70%;
+    border: 0;
+    border:.5px solid #213F62;
+    padding: .5em;
+    margin: .3em 0;
+}
+
+
+
+.dashboard-welcomeContent .escuelas{
+    width: 70%;
+    border: 0;
+    border:.5px solid #213F62;
+    padding: .5em;
+    margin: .3em 0;
+}
+
+
+
 .dashboard-welcomeContent label{
 	display:block;
 	color:#1F2850;
-    font-family:'Roboto';
+  font-family:'Roboto';
 }
 
 
