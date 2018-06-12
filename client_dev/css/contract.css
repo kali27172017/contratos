@@ -15,7 +15,6 @@
 
 
 .search-teacher{
-	border:1px solid red;
 	padding:1em;
 	display:grid;
 	grid-template-columns:140px 160px;
@@ -35,14 +34,33 @@
 
 
 .search-benefit{
-   border:1px solid red;
-   padding:1em;
-   margin:1em 0;
-   display:grid;
+	border:.5px solid #30305C;
+    padding:1em;
+    margin:1em 0;
+    display:grid;
+	grid-template-rows:30px 30px;
 }
 
 
+.search-benefit label{
+	text-decoration:underline;
+	font-family: "Roboto";
+}
 
+
+.search-benefit div  {
+	color:#30305C;
+	font-family: "Lato";
+}
+
+.contract input[type="submit"]{
+	color:white;
+	border:none;
+	background:#00B674;
+	font-weight: bold;
+	font-family: "Roboto";
+	padding:.5em;
+}
 
 
 
