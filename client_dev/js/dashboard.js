@@ -1,5 +1,7 @@
 import "../css/iconos.css"
 import "../css/dashboard.css"
+import validate  from  "./validation.js"
+
 
 let $ = require('jquery')
 let formRegister = document.getElementById("formRegister")
@@ -10,7 +12,8 @@ let btnRegister = document.getElementById("register_submit")
 let formRegisterTeacher = (e) => {
     e.preventDefault()
     let inputs = document.fregister.elements;
-    let dataRegister = []
+    validate(inputs)
+    let dataRegister = [];
 
     for(let i=0;i<inputs.length;i++){
     	 if(inputs[i].type != "submit"){
