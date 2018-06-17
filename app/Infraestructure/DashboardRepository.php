@@ -8,9 +8,6 @@ class DashboardRepository extends Conexion{
 
    public function insertTeacher($data) {
         
-
-    
-
         $nombre = $data["dataRegister"][0];
         $apellido = $data["dataRegister"][1];
         $dni = $data["dataRegister"][2];

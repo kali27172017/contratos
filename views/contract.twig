@@ -10,29 +10,56 @@
 {% block content %}
   
      <div class="dashboard-contractContent">
+
   	       <h3>Generar Contrato</h3>
+
+           <form method="post" class="teacher" id="formTeacher" name="fteacher"> 
+           	  <div class="search-teacherNumberOrder">1</div>
+              <div class="search-teacher">
+			      <input type="text" name="search-dni" id="search-dni" size="8" maxlength="8" placeholder="Ingresar Dni" required>
+			      <input type="hidden" name="formTeacher" value="frm_teacher">
+			      <input type="submit" value="Buscar Docente" id="search-teacherSubmit">	
+              </div>
+		   </form>
+
+
+
            <form method="post" class="contract"  id="formContract" name="fcontract">
-
-                <div class="search-teacher">
-            	  <label for="search-dni">Buscar Docente</label>
-			      <input type="text" name="searc-dni" id="search-dni" placeholder="Buscar Por Dni">	
-                </div>
-			
 			    <div class="search-benefit">
-			      <label for="apellido">Seleccione Tipo Prestacion</label>
-			      <div>
-					  Tiempo Completo:<input type="radio" name="benefit">
-				  </div>
-				  <div>
-					  Tiempo Parcial:<input type="radio" name="benefit">
-				  </div>
-			    </div>
+                  <div class="search-benefitTitle">
+                      <i class="fas fa-hand-point-right hide"  id="search-foundIcon"></i>
+                  	  <span id="search-foundTitle" class="search-foundTitle">	
+                  	  </span>
+                  	  <input type="hidden" name="search-found" id="search-foundHidden">
+                  	  <input type="hidden" name="formContract" value="frm_contract">
+                  </div>  
 
-			    <input type="submit" value="Guardar Contrato" id="saveContract">
-	        </form>		    
-     </div>
-   
+                  <div class="search-typeBenefit">
+                  	   <div class="search-benefitNumberOrder">2</div>
+                       <h4>Tipo Prestacion</h4>  	
+                  </div>
+			    
+			      <div class="search-typeBenefitOption">
+					   <p>Tiempo Completo:<input type="radio" name="benefit" value="1" id="benefit"></p>
+					   <p>Tiempo Parcial:<input type="radio" name="benefit" value="2" id="benefit"></p>
+				  </div>
+				  
+                  <div class="search-saveBenefit">
+                  	   <input type="submit" value="Guardar" id="saveContract" disabled>
+                  </div> 
+              </div>
+            </form>
+
+
+            <form method="post" class="loadContract hideLoadContract"  id="formLoadContract" name="formLoadContract">
+            	<input type="hidden" name="idContract"  id="idContract">
+            	<input type="submit" value="Generar Contrato">
+            </form>
+
+         </div>   
 {% endblock %}
+
+
 
 {% block script %}
 	<script src="http://localhost:9000/js/contract.js"> </script>

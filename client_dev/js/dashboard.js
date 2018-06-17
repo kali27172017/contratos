@@ -1,6 +1,6 @@
 import "../css/iconos.css"
 import "../css/dashboard.css"
-import validate  from  "./validation.js"
+//import validate  from  "./validation.js"
 
 
 let $ = require('jquery')
@@ -12,7 +12,7 @@ let btnRegister = document.getElementById("register_submit")
 let formRegisterTeacher = (e) => {
     e.preventDefault()
     let inputs = document.fregister.elements;
-    validate(inputs)
+    //validate(inputs)
     let dataRegister = [];
 
     for(let i=0;i<inputs.length;i++){
@@ -22,6 +22,8 @@ let formRegisterTeacher = (e) => {
     }
     formRegisterRequestAjax(dataRegister)
 }
+
+
 
 
 let formRegisterRequestAjax = (dataRegister) => {

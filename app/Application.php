@@ -38,7 +38,11 @@ class Application
         $router->get('exit', DashboardController::class . '@exit');
         $router->post('dashboard', DashboardController::class . '@registerTeacher');
 
+
         $router->get('contract',ContractController::class . '@index');
+        $router->post('contract' , ContractController::class  .  '@searchTeacher');
+        $router->post('contract/teacher', ContractController::class . '@saveContractTeacher');
+        $router->post('contract/generate', ContractController::class .  '@loadContracGenerate');
 
 
         $router->get('history',HistoryController::class . '@index');

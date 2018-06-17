@@ -13,7 +13,7 @@ class Conexion {
             //$this->dotenv->load();
             
             try{
-               $this->pdo = new \PDO("mysql:host=127.0.0.1;dbname=contratos","root","");
+               $this->pdo = new \PDO("mysql:host=127.0.0.1;dbname=contratos","root","admin");
             }catch (PDOException $e){
             	echo "Fallo la conexion" . $e->getMessage();
             }
