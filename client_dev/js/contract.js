@@ -3,6 +3,8 @@ import "../css/contract.css"
 import $ from 'jquery'
 
 
+
+
 let formTeacher = document.getElementById('formTeacher')
 let formTeacherContract  = document.getElementById('saveContract')  
 
@@ -12,11 +14,9 @@ let searchIconTeacher = document.getElementById('search-foundIcon')
 let searchHiddenFound  = document.getElementById('search-foundHidden')
 
 
-let saveContractMessage  = document.getElementById('saveContractMessage')
+//let saveContractMessage  = document.getElementById('saveContractMessage')
+let loadContractLink  = document.getElementById('loadContractLink')
 
-
-let formLoadContract  = document.getElementById('formLoadContract')
-let idContract  = document.getElementById('idContract')
 
 
 
@@ -76,8 +76,7 @@ let formSaveContractTeacherRequestAjax = (dataContract)  => {
 	})
 	.done((data) => {
         if(data != "undefined"  && data != ""){
-            formLoadContract.classList.remove('hideLoadContract')
-            idContract.setAttribute('value',data)
+		 	loadContractLink.setAttribute('href',`http://localhost:8080/contratos/public/contract/generate/${data}`)
         }
 	})     
 	.catch((e) => {
@@ -90,32 +89,9 @@ let formSaveContractTeacherRequestAjax = (dataContract)  => {
 
 
 
-let formLoadContractRequestAjax  = (e) => {
-	e.preventDefault()
-	$.ajax({
-		type: "POST",
-		url: "http://localhost:8080/contratos/public/contract/generate",
-		data:{dataGenerate:idContract.value}
-	})
-	.done((data) => {
-         console.log(data)
-	})     
-	.catch((e) => {
-		console.error(e)
-	})
-}
-
-
-
-
-
-
-
-
-
 formTeacher.addEventListener("submit",formSearchTeacherRequest)
 formTeacherContract.addEventListener("click",formSaveContractTeacher)
-formLoadContract.addEventListener("submit",formLoadContractRequestAjax)
+
 
 
 

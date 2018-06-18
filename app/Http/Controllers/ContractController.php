@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\BaseController;
 use App\Infraestructure\ContractRepository;
 use Spipu\Html2Pdf\Html2Pdf;
-use Spipu\Html2Pdf\Exception\Html2PdfException;
-use Spipu\Html2Pdf\Exception\ExceptionFormatter;
+
 
 
 
@@ -34,13 +33,45 @@ class ContractController extends BaseController{
      }
 
 
-     public function loadContracGenerate(){
-        
-       	   $content = $this->render('contract_completo.php');
-           $html2pdf = new Html2Pdf('P', 'A4', 'es','true','utf-8');
-           $html2pdf->pdf->SetDisplayMode('fullpage');
-           $html2pdf->writeHTML($content);
-           $html2pdf->output('ejemplo.pdf');
+
+     public function loadContractGenerate($id){
+
+            /*Obtener datos del docente para el Contrato*/
+
+             $contract = new ContractRepository();
+             $infoContract = $contract->getInfoBenefit($id);
+
+            /*Datos enviados al Contrato*/
+             $nombre = $infoContract[0]["nombre"];
+             $apellido  = $infoContract[0]["apellido"];
+             $dni  = $infoContract[0]["dni"];
+             $domicilio = $infoContract[0]["domicilio"];
+
+             $content = $this->render('contract_completo.twig',['nombre' => $nombre,
+                 'dni' => $dni , 'domicilio' => $domicilio,
+                 'apellido' => $apellido
+             ]);
+
+             $this->pdfGenerate($content);
      }
+
+
+
+
+     public function pdfGenerate($content) {
+         try
+          {
+             $html2pdf = new HTML2PDF('P', 'A4', 'es', true, 'UTF-8', 3);
+             $html2pdf->pdf->SetDisplayMode('fullpage');
+             $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
+             return $html2pdf->Output('contrato.pdf');
+          }
+          catch(HTML2PDF_exception $e) {
+             echo $e;
+             exit;
+         }
+     }
+
+
 
 }

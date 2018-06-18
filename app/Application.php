@@ -42,7 +42,7 @@ class Application
         $router->get('contract',ContractController::class . '@index');
         $router->post('contract' , ContractController::class  .  '@searchTeacher');
         $router->post('contract/teacher', ContractController::class . '@saveContractTeacher');
-        $router->post('contract/generate', ContractController::class .  '@loadContracGenerate');
+        $router->get('contract/generate/{id}', ContractController::class .  '@loadContractGenerate');
 
 
         $router->get('history',HistoryController::class . '@index');

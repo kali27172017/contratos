@@ -21,8 +21,9 @@ class DashboardController extends BaseController{
 		  return $this->render('dashboard.twig',['usuario' => $usuario,'fecha' => $fecha,
 		    'grados' => $grados->listGrados(),
 		    'escuelas' => $escuelas->listEscuelas() 	
-		     ]);    
+          ]);
 	}
+
 
 
 	public function registerTeacher(){
