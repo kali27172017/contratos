@@ -11,15 +11,28 @@
       text-decoration:underline;
    }
 
-   .condition{
-       border:1px solid red;
-       padding:20px;
+   .header_condition{
+      text-decoration:underline;
+   }
+
+   .header_text p {
+      margin:10px auto;
+      text-align:"justify";
+   }
+
+   .header_firms table{
+       margin-top:220px;
+   }
+
+   .header_firms_td{
+      margin-left:130px;
    }
 
 
-
-
-
+   .header_firms_tr td{
+      border-top:2px solid gray;
+      text-align:center;
+   }
 </style>
 
 
@@ -52,41 +65,174 @@
                a quien en adelante se le denominará EL TRABAJADOR, en los términos y condiciones siguientes
            </p>
 
-            <p><strong>CONDICIONES ESPECIALES DEL CONTRATO</strong></p>
+            <p class="header_condition"><strong>CONDICIONES ESPECIALES DEL CONTRATO</strong></p>
 
             <div>
                 <table border="1">
-                    <tr >
-                        <td height="20" width="300">FECHA INICIO</td>
-                        <td width="280">:02 DE MAYO DEL 2018 </td>
+                    <tr>
+                        <td height="20" width="300"><strong>FECHA INICIO</strong></td>
+                        <td width="280">:{{ finicio }} </td>
                     </tr>
 
 
-                    <tr >
-                        <td height="20" width="300">FECHA TERMINO</td>
-                        <td width="280">:31 DE AGOSTO DEL 2018 </td>
+                    <tr>
+                        <td height="20" width="300"><strong>FECHA TERMINO</strong></td>
+                        <td width="280">: {{ ffin }}</td>
                     </tr>
 
 
-                    <tr >
-                        <td height="20" width="300">FACULTAD</td>
-                        <td width="280">INGENIERÍAS y ARQUITECTURAS</td>
+                    <tr>
+                        <td height="20" width="300"><strong>FACULTAD</strong></td>
+                        <td width="280">:{{ facultad }}</td>
                     </tr>
 
 
-                    <tr >
-                        <td height="20" width="300">ESCUELA</td>
-                        <td width="280">INGENIERÍA DE SISTEMAS E INFORMÁTICA</td>
+                    <tr>
+                        <td height="20" width="300"> <strong>ESCUELA</strong></td>
+                        <td width="280">:{{ escuela }}</td>
                     </tr>
 
 
 
-                    <tr >
-                        <td height="20" width="300">FECHA INICIO</td>
-                        <td width="280">02 DE MAYO DEL 2018 </td>
+                    <tr>
+                        <td height="20" width="300"><strong>CARGO</strong></td>
+                        <td width="280">:DOCENTE CONTRATADO</td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td height="20" width="300"><strong>REGIMEN DE DEDICACION</strong></td>
+                        <td width="280">:A TIEMPO COMPLETO</td>
+                    </tr>
+
+
+                    <tr>
+                        <td height="20" width="300"><strong>CARGA HORARIA Semanal/Mensual</strong></td>
+                        <td width="280">:40 Horas Semanales / 160 horas Mensuales</td>
+                    </tr>
+
+
+                    <tr>
+                        <td height="20" width="300"><strong>Semestre Académico</strong></td>
+                        <td width="280">:{{ ciclo }}</td>
                     </tr>
 
                 </table>
+            </div>
+
+
+
+            <div class="header_text"> 
+                <p>
+                   <strong>PRIMERA: LA UNIVERSIDAD</strong> es una persona jurídica de derecho privado, que tiene como finalidad principal la prestación de servicios educativos de conformidad con lo previsto en la Ley de Promoción de la Inversión en la Educación (Decreto Legislativo Nº 882), sus normas reglamentarias y complementarias, por lo que requiere contratar los servicios de  <strong>EL TRABAJADOR</strong> en forma de servicio, para que se desempeñe en condición de profesor contratado a tiempo completo, bajo las condiciones especiales y cláusulas señaladas en este contrato.
+                </p>
+
+                <p>
+                   <strong>SEGUNDA:</strong> En virtud del presente documento <strong>LA UNIVERSIDAD</strong> contrata personal idóneo y calificado a Plazo Fijo y bajo subordinación, los servicios de  <strong>EL TRABAJADOR</strong>, para que realice las labores propias y complementarias del puesto de profesor.
+                </p>
+
+                <p>
+                   <strong>TERCERA:</strong> El cumplimiento de la presente relación laboral y mientras dure ésta, <strong>EL TRABAJADOR</strong> desarrollará sílabos y/o resúmenes, extractos y separatas, que serán utilizados por los estudiantes en el desarrollo de sus clases. En este sentido, <strong>EL TRABAJADOR</strong> cede, en forma exclusiva a <strong>LA UNIVERSIDAD</strong> los derechos patrimoniales de dichas obras.
+                </p>
+
+                <p>
+                  Asimismo, ambas partes declaran que la retribución por la cesión antes mencionada, se encuentra incorporada dentro de la remuneración de 
+                   <strong>EL TRABAJADOR.</strong>
+                </p>
+
+                <p>
+                   <strong>CUARTA:</strong> El plazo del presente contrato está señalado en las condiciones especiales y su duración permite cubrir las necesidades a que se refiere la cláusula primera, así como para hacer entrega formal de la documentación correspondiente a dicha labor. La suspensión del contrato de trabajo por alguna de las causas previstas en el artículo 15° del Decreto Supremo N° 003-97TR, no interrumpirá el plazo de duración del contrato
+                </p>
+
+                <p>
+                   <strong>QUINTA:</strong> Por la naturaleza de las labores universitarias, el número de horas lectivas y/o no lectivas semanales mensuales, podrán disminuir o incrementarse hasta el máximo establecido en las condiciones especiales de este contrato, las mismas que se sujetarán al cuadro de horas que emita la Facultad, por cuanto este contrato no es un pacto de labor fija, estando facultada <strong>LA UNIVERSIDAD</strong> por tales razones, incluso, a asignar horas lectivas y/o no lectivas, sólo en las oportunidades que así se requiera. Los períodos dejados de laborar no generarán pago alguno de remuneraciones.
+                </p>
+
+                <p>
+                   <strong>SEXTA: EL TRABAJADOR</strong> cumplirá el horario de trabajo que 
+                    <strong>LA UNIVERSIDAD</strong> le asigne para el dictado de clases, señalándose que la inobservancia del mismo o cualquiera irregularidad en la asistencia, puede determinar la suspensión del presente contrato por medida disciplinaria, se encuentre o no dentro del periodo de prueba, cursándose la comunicación notarial respectiva.
+                </p>
+
+                <p>
+                   <strong>SÉPTIMA: EL TRABAJADOR</strong> deberá asimismo cumplir con las normas propias del Reglamento General de la Universidad, de la Ley Universitaria, Reglamentos Especiales, Reglamento del Docente, así como las que se impartan por necesidades del servicio en ejercicio de las facultades de administración de  <strong>LA UNIVERSIDAD</strong>, de acuerdo al artículo 9° del Decreto Supremo N° 003-97-TR.
+                </p>
+
+
+                <p>
+                   <strong>OCTAVA: LA UNIVERSIDAD</strong> abonará a  <strong>EL TRABAJADOR </strong> la cantidad de s/ 111111 Soles como remuneración mensual, de la cual se deducirá las aportaciones y descuentos por tributos establecidos en la Ley que resulten de aplicación. Las ausencias injustificadas por parte  <strong>DEL TRABAJADOR</strong> implican la pérdida de la remuneración proporcionalmente a la duración de dicha ausencia, sin perjuicio del ejercicio de las facultades disciplinarias propias de  <strong>LA UNIVERSIDAD</strong> previstas en la legislación laboral y normas internas de la misma.
+                </p>
+
+
+                <p>
+                   <strong>NOVENA:</strong> Queda entendido que  <strong>LA UNIVERSIDAD</strong> no está obligada a dar aviso alguno adicional referente a la expiración del tiempo convenido, indicado en las condiciones especiales del contrato.
+                </p>
+
+
+                <p>
+                   <strong>DÉCIMA: EL TRABAJADOR</strong> está sujeto a las estipulaciones contenidas en el Decreto Supremo N° 001-97-TR Texto Único Ordenado de la Ley de Compensación por Tiempo de Servicios, norma que establece dentro sus alcances que se tiene derecho legal a dicho beneficio sólo por aquellos periodos en los que se cumplan los requisitos de haber trabajado mínimo cuatro horas diarias de labora en jornadas de cinco días semanales dentro de un término ininterrumpido de un (1) mes y/o como mínimo una jornada semanal-mensual igual o mayor a veinte (20) horas.
+                </p>
+
+
+                <p>
+                   <strong>DÉCIMA PRIMERA:</strong> Queda entendido que la prestación del servicio deberá ser efectuada de manera personal, no pudiendo  <strong>EL TRABAJADOR </strong> ser reemplazado ni ayudado por terceras personas, siendo sus obligaciones:
+                    
+                   <p>
+                        a) Desempeñar su labor con dignidad y eficiencia pedagógica.
+                        b) Cumplir con el horario establecido por  <strong>LA UNIVERSIDAD.</strong>
+                        c) Evaluar a los alumnos a su cargo, de acuerdo a las disposiciones que establezca  <strong>LA UNIVERSIDAD.</strong>
+                        d) Entregar oportunamente los resultados de las evaluaciones realizadas, así como firmar las actas correspondientes.
+                        e) Asistir puntualmente a las reuniones en general a todo evento al que sea convocado por  <strong>LA UNIVERSIDAD.</strong>
+                        f) Colaborar con las tareas educativas y con cualquier actividad que realice  <strong>LA UNIVERSIDAD.</strong>
+                        g) Facilitar la supervisión del desarrollo de sus actividades ya sea por el personal directivo de  <strong>LA UNIVERSIDAD.</strong>
+                        h) Observar, en todo momento y circunstancia, su conducta y actitud coherente con las líneas axiológicas de   <strong>LA UNIVERSIDAD.</strong>
+                        i) Asistir a las capacitaciones a las que  <strong>LA UNIVERSIDAD</strong> le requiera. 
+                        j) Y otras que señale  <strong>LA UNIVERSIDAD</strong>.
+                   </p> 
+                </p>
+
+                <p>
+                    <strong>DECIMO SEGUNDA:</strong> Adicionalmente  <strong>EL TRABAJADOR</strong> se compromete exclusivamente al momento de desarrollar su labor en clase, respetar el Manual de Marca e Identidad Corporativa y además cumplir con lo dispuesto en el punto 10.2 del mencionado manual, haciendo uso de los materiales brindados por la universidad denominados ppt`s u otro formato similar de diapositivas de índole informático, los mismos que necesariamente deberán contener el logotipo de  <strong>LA UNIVERSIDAD.</strong>
+                </p>
+
+                <p>
+                   <strong>DÉCIMO TERCERA: EL TRABAJADOR</strong> acepta que  <strong>LA UNIVERSIDAD</strong> tenga la facultad de sancionar pecuniariamente al docente que inasista a las capacitaciones a las que le haya pedido acudir, sin perjuicio de ejercer su facultad de sanción conforme al inciso a) del artículo 25 del D.S. N° 003-97-TR sobre incumplimiento de disposiciones de trabajo, ya que asistir a las capacitaciones es una obligación pactada en el inciso j) de la cláusula cuarta del presente contrato.
+                </p>
+
+                <p>
+                   <strong>DÉCIMO CUARTA: EL TRABAJADOR</strong> conviene con  <strong>EL EMPLEADOR</strong> en que este último podrá hacerle entrega de su boleta de pago utilizando medios mecanizados, informáticos o digitales, tales como entrega en el correo electrónico de centro de labores, entre otros; debiendo 
+                    <strong>EL EMPLEADOR</strong> verificar la recepción de la boleta de pago y, sin perjuicio de probar dicha entrega por cualquier medio.
+                   En virtud de lo expuesto en el párrafo precedente, <strong>EL TRABAJADOR </strong> consciente que su firma será opcional, conforme lo dispuesto por el artículo 19° del Decreto Supremo N° 001-98-TR modificado por el artículo 1° del Decreto Supremo N° 009-2011-TR, obligándose <strong>EL EMPLEADOR</strong> a garantizar y sustentar la efectiva recepción de la boleta de pago por parte 
+                   de  <strong>EL TRABAJADOR</strong> y acreditar el pago de la remuneración. Del mismo modo, <strong>EL TRABAJADOR</strong> declara tener conocimiento que 
+                    <strong>EL EMPLEADOR</strong> emplea firma digitalizada en las boletas de pago que emite
+                </p>
+
+                <p>
+                   <strong>DÉCIMO QUINTA: EL TRABAJADOR</strong>, tendrá la obligación de comunicar a  <strong>LA UNIVERSIDAD</strong>, en caso las instalaciones o el lugar donde desarrolla sus labores, no se encuentre en condiciones óptimas para trabajar.
+                </p>
+
+                <p>
+                   <strong>EL TRABAJADOR</strong>, está obligado a asistir a las capacitaciones sobre Seguridad y Trabajo que imparta  <strong>LA UNIVERSIDAD</strong>.
+                </p>
+
+                <p>
+                   <strong>LA UNIVERSIDAD y EL TRABAJADOR</strong>, deberán cumplir con todo lo que especifica la Ley Nº 29783, Ley de Seguridad y Salud en el Trabajo
+                </p>
+
+                <p>
+                   En señal de conformidad las partes suscriben este documento en tres ejemplares de un mismo tenor y para solo efecto, en la ciudad de Piura {{fecha}};
+                </p>
+            </div>
+
+            <div class="header_firms">
+              <table border="0">
+                    <tr class="header_firms_tr">
+                        <td height="10" width="200"><strong>LA UNIVERSIDAD</strong></td>
+                         <td class="header_firms_td" height="10" width="300">
+                            <p><strong>EL TRABAJADOR</strong></p>
+                            <p><strong>DNI:</strong> {{ dni }}</p>
+                         </td>
+                    </tr>
+               </table>      
             </div>
         </div>
 </page>

@@ -46,10 +46,18 @@ class ContractController extends BaseController{
              $apellido  = $infoContract[0]["apellido"];
              $dni  = $infoContract[0]["dni"];
              $domicilio = $infoContract[0]["domicilio"];
+             $fechaInicio = $infoContract[0]["finicio_academico"]; 
+             $fechaFin = $infoContract[0]["ffin_academico"];
+             $facultad = $infoContract[0]["nom_facultad"];
+             $escuela = $infoContract[0]["nom_escuela"];
+             $ciclo = $infoContract[0]["ciclo_academico"];
+             $fecha  = date("Y-m-d");
 
              $content = $this->render('contract_completo.twig',['nombre' => $nombre,
                  'dni' => $dni , 'domicilio' => $domicilio,
-                 'apellido' => $apellido
+                 'apellido' => $apellido, 'finicio' => $fechaInicio,
+                 'ffin' => $fechaFin,'facultad' => $facultad, 'escuela' => $escuela,
+                 'ciclo' => $ciclo, 'fecha' => $fecha
              ]);
 
              $this->pdfGenerate($content);
