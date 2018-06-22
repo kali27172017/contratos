@@ -42,6 +42,8 @@ class ContractRepository extends Conexion{
      public function getInfoBenefit($id_contrato){
          $contract = [];
 
+
+         
          $stmt  = $this->pdo->prepare( "select P.tipo_prestacion,D.nombre,D.apellido,D.dni,D.domicilio,
           D.finicio_academico,D.ffin_academico,D.ciclo_academico,
           (select nombre_escuela  from escuela  where id_escuela=D.id_escuela) as nom_escuela,
@@ -64,6 +66,23 @@ class ContractRepository extends Conexion{
          return $contract;
 
        }
+
+
+
+       
+       public function getTypeBenefit($id_contrato){
+           $stmt = $this->pdo->prepare("select P.tipo_prestacion from prestacion as P 
+            join contrato as C on P.id_prestacion=C.id_prestacion where C.id_contrato=:id_contrato");
+           $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+           $stmt->bindParam(':id_contrato',$id_contrato,\PDO::PARAM_INT);
+           $stmt->execute();
+
+           if($row = $stmt->fetch()){
+               return $row;
+           }
+
+       }
+
 
 }
 

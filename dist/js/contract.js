@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10029,7 +10029,11 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 3 */
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10037,57 +10041,81 @@ module.exports = function (module) {
 
 __webpack_require__(0);
 
-__webpack_require__(4);
+__webpack_require__(8);
 
-var $ = __webpack_require__(1);
-var form = document.getElementById('formAdmin');
-var icon_admin = document.getElementById('icon_admin');
-var icon_password = document.getElementById('icon_clave');
+var _jquery = __webpack_require__(1);
 
-//Logica para login Administrador
-var formLogin = function formLogin(e) {
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var formTeacher = document.getElementById('formTeacher');
+var formTeacherContract = document.getElementById('saveContract');
+
+var dniTeacher = document.getElementById('search-dni');
+var foundTitleTeacher = document.getElementById('search-foundTitle');
+var searchIconTeacher = document.getElementById('search-foundIcon');
+var searchHiddenFound = document.getElementById('search-foundHidden');
+
+var loadContractLink = document.getElementById('loadContractLink');
+
+var formSearchTeacherRequest = function formSearchTeacherRequest(e) {
 	e.preventDefault();
-	var admin = form.administrador.value;
-	var clave = form.clave.value;
-	formRequestAjax(admin, clave);
-};
 
-var formRequestAjax = function formRequestAjax() {
-	$.ajax({
+	_jquery2.default.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/",
-		data: { admin: arguments.length <= 0 ? undefined : arguments[0], clave: arguments.length <= 1 ? undefined : arguments[1] }
-	}).done(function (clase) {
-		if (clase[2]) {
-			removeStyles('fa-times', 'cross');
-			icon_admin.classList.add(clase[0], clase[1]);
-			icon_password.classList.add(clase[0], clase[1]);
-			redirectionDashboard();
-		} else {
-			removeStyles('fa-check', 'check');
-			icon_admin.classList.add(clase[0], clase[1]);
-			icon_password.classList.add(clase[0], clase[1]);
-		}
+		url: "http://localhost:8080/contratos/public/contract/",
+		data: { dni: dniTeacher.value }
+	}).done(function (data) {
+		var title = "El Docente a Contratar es " + data[0]["nombre"].toUpperCase() + "  \n\t                 " + data[0]["apellido"].toUpperCase();
+
+		searchIconTeacher.classList.remove('hide');
+		foundTitleTeacher.textContent = title;
+		searchHiddenFound.setAttribute("value", data[0]["id_docente"]);
+		formTeacherContract.removeAttribute('disabled');
 	}).catch(function (e) {
-		console.error(e.message);
+		console.error(e);
 	});
 };
 
-var removeStyles = function removeStyles(clase1, clase2) {
-	icon_admin.classList.remove(clase1, clase2);
-	icon_password.classList.remove(clase1, clase2);
+var formSaveContractTeacher = function formSaveContractTeacher(e) {
+	e.preventDefault();
+	var dataContracts = [];
+	var inputs = document.fcontract.elements;
+
+	for (var i = 0; i < inputs.length; i++) {
+		if (inputs[i].type != "submit") {
+			if (inputs[i].type == "radio" && inputs[i].checked) {
+				dataContracts.push(inputs[i].value);
+			} else if (inputs[i].type != "radio") {
+				dataContracts.push(inputs[i].value);
+			}
+		}
+	}
+	formSaveContractTeacherRequestAjax(dataContracts);
 };
 
-var redirectionDashboard = function redirectionDashboard() {
-	setTimeout(function () {
-		document.location.href = location.href + "dashboard";
-	}, 600);
+var formSaveContractTeacherRequestAjax = function formSaveContractTeacherRequestAjax(dataContract) {
+	_jquery2.default.ajax({
+		type: "POST",
+		url: "http://localhost:8080/contratos/public/contract/teacher",
+		data: { dataContract: dataContract }
+	}).done(function (data) {
+		console.log(data);
+		if (data != "undefined" && data != "") {
+			loadContractLink.setAttribute('href', "http://localhost:8080/contratos/public/contract/generate/" + data);
+			loadContractLink.style.background = '#00C476';
+		}
+	}).catch(function (e) {
+		console.error(e);
+	});
 };
 
-form.addEventListener('submit', formLogin);
+formTeacher.addEventListener("submit", formSearchTeacherRequest);
+formTeacherContract.addEventListener("click", formSaveContractTeacher);
 
 /***/ }),
-/* 4 */
+/* 8 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -126,6 +126,13 @@
 	bottom:10px;
 }
 
+.loadContract a{
+	font-weight:bold;
+	background:gray;
+	color:white;
+	padding:1em; 
+}
+
   .loadContract input[type="submit"]{
     background:#7BDA37;
 	color:white;
@@ -135,9 +142,12 @@
     padding:.7em 1.5em;
   }
 
-  /*.hideLoadContract {
-  	display:none;
-  }*/
+  
+
+
+
+
+
 
 
 

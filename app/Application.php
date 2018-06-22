@@ -8,7 +8,7 @@ use Illuminate\Routing\Router;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ContractController;
-use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\PanelController;
 
 
 
@@ -45,7 +45,7 @@ class Application
         $router->get('contract/generate/{id}', ContractController::class .  '@loadContractGenerate');
 
 
-        $router->get('history',HistoryController::class . '@index');
+        $router->get('panel',PanelController::class . '@index');
 
 
         $response = $router->dispatch(Request::capture());

@@ -57,10 +57,11 @@ body{
 	color:white;
 }
 
-.dashboard-optionsList .fa-book,.fa-book-open,.fa-history{
+.dashboard-optionsList .fa-book,.fa-book-open,.fa-cpanel{
 	color:white;
 	font-weight:bold;
 	position:absolute;
+	font-size:1em;
 	top:.4em;
 }
 

@@ -14,7 +14,6 @@ let searchIconTeacher = document.getElementById('search-foundIcon')
 let searchHiddenFound  = document.getElementById('search-foundHidden')
 
 
-//let saveContractMessage  = document.getElementById('saveContractMessage')
 let loadContractLink  = document.getElementById('loadContractLink')
 
 
@@ -75,8 +74,10 @@ let formSaveContractTeacherRequestAjax = (dataContract)  => {
 		data:{dataContract:dataContract}
 	})
 	.done((data) => {
+		console.log(data)
         if(data != "undefined"  && data != ""){
 		 	loadContractLink.setAttribute('href',`http://localhost:8080/contratos/public/contract/generate/${data}`)
+			loadContractLink.style.background = '#00C476'			 	
         }
 	})     
 	.catch((e) => {

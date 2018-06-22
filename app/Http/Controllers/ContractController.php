@@ -9,11 +9,14 @@ use Spipu\Html2Pdf\Html2Pdf;
 
 
 class ContractController extends BaseController{
+      
+     public $template = ''; 
 
 
      public function index(){
      	   return $this->render('contract.twig');
      }
+
 
 
 
@@ -26,6 +29,8 @@ class ContractController extends BaseController{
 
 
 
+
+
      public function saveContractTeacher(){
         $data = $_POST;
         $contract  = new ContractRepository();
@@ -34,14 +39,13 @@ class ContractController extends BaseController{
 
 
 
+
+
      public function loadContractGenerate($id){
-
-            /*Obtener datos del docente para el Contrato*/
-
              $contract = new ContractRepository();
              $infoContract = $contract->getInfoBenefit($id);
+             $template  = $this->getTemplate($contract->getTypeBenefit($id));
 
-            /*Datos enviados al Contrato*/
              $nombre = $infoContract[0]["nombre"];
              $apellido  = $infoContract[0]["apellido"];
              $dni  = $infoContract[0]["dni"];
@@ -53,7 +57,7 @@ class ContractController extends BaseController{
              $ciclo = $infoContract[0]["ciclo_academico"];
              $fecha  = date("Y-m-d");
 
-             $content = $this->render('contract_completo.twig',['nombre' => $nombre,
+             $content = $this->render($template,['nombre' => $nombre,
                  'dni' => $dni , 'domicilio' => $domicilio,
                  'apellido' => $apellido, 'finicio' => $fechaInicio,
                  'ffin' => $fechaFin,'facultad' => $facultad, 'escuela' => $escuela,
@@ -61,6 +65,19 @@ class ContractController extends BaseController{
              ]);
 
              $this->pdfGenerate($content);
+     }
+
+
+
+
+
+     public function getTemplate($type){
+             if($type["tipo_prestacion"] == "Completo"){
+                $this->template = 'contract_completo.twig';
+             }else{
+                $this->template = 'contract_parcial.twig';
+             }
+             return $this->template;
      }
 
 
@@ -79,6 +96,8 @@ class ContractController extends BaseController{
              exit;
          }
      }
+
+
 
 
 

@@ -1,6 +1,6 @@
 import "../css/iconos.css"
 import "../css/dashboard.css"
-//import validate  from  "./validation.js"
+
 
 
 let $ = require('jquery')
