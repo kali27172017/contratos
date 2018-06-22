@@ -25,7 +25,7 @@ let formSearchTeacherRequest  = (e) => {
 
     $.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/contract/",
+		url: "http://localhost:80/contratos/public/contract/",
 		data:{dni:dniTeacher.value}
 	})
 	.done((data) => {
@@ -70,13 +70,13 @@ let formSaveContractTeacher  = (e)  => {
 let formSaveContractTeacherRequestAjax = (dataContract)  => {
   $.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/contract/teacher",
+		url: "http://localhost:80/contratos/public/contract/teacher",
 		data:{dataContract:dataContract}
 	})
 	.done((data) => {
 		console.log(data)
         if(data != "undefined"  && data != ""){
-		 	loadContractLink.setAttribute('href',`http://localhost:8080/contratos/public/contract/generate/${data}`)
+		 	loadContractLink.setAttribute('href',`http://localhost:80/contratos/public/contract/generate/${data}`)
 			loadContractLink.style.background = '#00C476'			 	
         }
 	})     

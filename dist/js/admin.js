@@ -10055,7 +10055,7 @@ var formLogin = function formLogin(e) {
 var formRequestAjax = function formRequestAjax() {
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/",
+		url: "http://localhost:80/contratos/public/",
 		data: { admin: arguments.length <= 0 ? undefined : arguments[0], clave: arguments.length <= 1 ? undefined : arguments[1] }
 	}).done(function (clase) {
 		if (clase[2]) {

@@ -10064,7 +10064,7 @@ var formSearchTeacherRequest = function formSearchTeacherRequest(e) {
 
 	_jquery2.default.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/contract/",
+		url: "http://localhost:80/contratos/public/contract/",
 		data: { dni: dniTeacher.value }
 	}).done(function (data) {
 		var title = "El Docente a Contratar es " + data[0]["nombre"].toUpperCase() + "  \n\t                 " + data[0]["apellido"].toUpperCase();
@@ -10098,12 +10098,12 @@ var formSaveContractTeacher = function formSaveContractTeacher(e) {
 var formSaveContractTeacherRequestAjax = function formSaveContractTeacherRequestAjax(dataContract) {
 	_jquery2.default.ajax({
 		type: "POST",
-		url: "http://localhost:8080/contratos/public/contract/teacher",
+		url: "http://localhost:80/contratos/public/contract/teacher",
 		data: { dataContract: dataContract }
 	}).done(function (data) {
 		console.log(data);
 		if (data != "undefined" && data != "") {
-			loadContractLink.setAttribute('href', "http://localhost:8080/contratos/public/contract/generate/" + data);
+			loadContractLink.setAttribute('href', "http://localhost:80/contratos/public/contract/generate/" + data);
 			loadContractLink.style.background = '#00C476';
 		}
 	}).catch(function (e) {
