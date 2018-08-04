@@ -44,12 +44,14 @@ class ContractController extends BaseController{
      public function loadContractGenerate($id){
              $contract = new ContractRepository();
              $infoContract = $contract->getInfoBenefit($id);
+
              $template  = $this->getTemplate($contract->getTypeBenefit($id));
 
-             $nombre = $infoContract[0]["nombre"];
-             $apellido  = $infoContract[0]["apellido"];
+             $nombre = ucfirst($infoContract[0]["nombre"]); 
+             $apellido  = ucfirst($infoContract[0]["apellido"]);
              $dni  = $infoContract[0]["dni"];
-             $domicilio = $infoContract[0]["domicilio"];
+             $nacimiento =  date("Y")  - date("Y", strtotime($infoContract[0]["fecha_nacimiento"]));  
+             $domicilio = ucfirst($infoContract[0]["domicilio"]);
              $fechaInicio = $infoContract[0]["finicio_academico"]; 
              $fechaFin = $infoContract[0]["ffin_academico"];
              $facultad = $infoContract[0]["nom_facultad"];
@@ -58,7 +60,7 @@ class ContractController extends BaseController{
              $fecha  = date("Y-m-d");
 
              $content = $this->render($template,['nombre' => $nombre,
-                 'dni' => $dni , 'domicilio' => $domicilio,
+                 'dni' => $dni , 'nacimiento' => $nacimiento,'domicilio' => $domicilio,
                  'apellido' => $apellido, 'finicio' => $fechaInicio,
                  'ffin' => $fechaFin,'facultad' => $facultad, 'escuela' => $escuela,
                  'ciclo' => $ciclo, 'fecha' => $fecha

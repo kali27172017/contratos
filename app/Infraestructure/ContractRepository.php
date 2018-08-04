@@ -44,8 +44,8 @@ class ContractRepository extends Conexion{
 
 
          
-         $stmt  = $this->pdo->prepare( "select P.tipo_prestacion,D.nombre,D.apellido,D.dni,D.domicilio,
-          D.finicio_academico,D.ffin_academico,D.ciclo_academico,
+         $stmt  = $this->pdo->prepare( "select P.tipo_prestacion,D.nombre,D.apellido,D.dni,D.fecha_nacimiento,
+          D.domicilio,D.finicio_academico,D.ffin_academico,D.ciclo_academico,
           (select nombre_escuela  from escuela  where id_escuela=D.id_escuela) as nom_escuela,
           (select F.nombre_facultad from facultad as F join escuela as E on
           F.id_facultad=E.id_facultad where E.id_escuela=D.id_escuela) as nom_facultad

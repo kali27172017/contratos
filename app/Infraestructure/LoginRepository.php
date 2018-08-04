@@ -34,7 +34,7 @@ class LoginRepository extends Conexion{
 
      public  function validateResponse($data){
 
-           Session::sessionUSer($data); 
+         Session::sessionUSer($data); 
      	   $this->setAdmin($data["admin"]);
      	   $this->setClave($data["clave"]);
          

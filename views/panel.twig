@@ -1,43 +1,66 @@
 {% extends 'layout.twig' %}
 
-
-
 {% block head %}
-      {{ parent() }}
-       <link rel="stylesheet" href="../dist/css/panel.css" type="text/css">
-{%  endblock %}
-
-
-
-
-
+    {{ parent() }}
+    <link rel="stylesheet" href="http://localhost:9000/css/panel.css" type="text/css">
+{% endblock %}
 
 {% block content %}
-  
-     <div class="panel">
-     	<h3 class="panel-title">Panel Administrador</h3>
+
+    <div class="panel">
+        <h3 class="panel-title">Panel Administrador</h3>
         <ul class="panel-list">
-        	<li> <a href="#">Docentes</a></li>
-        	<li> <a href="#">Escuelas</a></li>
-        	<li> <a href="#">Facultad</a></li>
+            <li>
+                <a href="#" class="tab" id="tabTeacher">Docentes</a>
+            </li>
+            <li>
+                <a href="#" class="tab" id="tabSchool">Escuelas</a>
+            </li>
+            <li>
+                <a href="#" class="tab" id="tabFaculty">Facultades</a>
+            </li>
         </ul>
 
-        <div class="panel-facultad">
-        	 <form action="" class="panel-facultadForm">
-        	 	 <i class="fas fa-search"></i>
-        	 	 <input type="text" name="" id="" class="spacing" placeholder="Ingrese Facultad">
-        	 	 <input type="submit" value="Buscar">
-        	 </form>
-        </div>      
-  
-     </div>
-     
-     
+        <!--<div class="panel-facultad"> <form method="post" class="panel-facultadForm" id="form"> <i class="fas fa-search"></i> <datalist id="facultades"> {% for facultad in facultades %} <option value="{{facultad.nombre_facultad}}"></option> {% endfor %} </datalist> <input type="text" class="spacing" placeholder="Ingrese Dni Docente"> <input type="submit" value="Buscar" id="formId"> </form> </div>-->
 
+        <div class="hide" id="panelTeacher">
+            <h1>DOCENTES</h1>
+        </div>
 
+        <div class="hide" id="panelSchool">
+            <h1>ESCUELAS
+            </h1>
+        </div>
+
+        <div class="" id="panelFaculty">
+            <table border="1" class="tableFaculty" id="tableFaculty">
+                <tr>
+                    <th colspan="4">Facultad</th>
+                </tr>
+
+                {% for facultad in facultades %}
+                    <tr>
+                        <td>{{ facultad.nombre_facultad }}</td>
+                        <td>
+                            <a href="#" data-option="update" data-id="{{facultad.id_facultad}}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#" data-option="delete" data-id="{{facultad.id_facultad}}">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+
+    </div>
 
 {% endblock %}
 
 {% block script %}
-	<script src="../dist/js/panel.js"> </script>
-{% endblock %}	
+    <script src="http://localhost:9000/js/panel.js"></script>
+{% endblock %}

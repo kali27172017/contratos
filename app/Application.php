@@ -28,8 +28,8 @@ class Application
             $this->container
         );
 
+        
 
-      
 
         $router->get('/', LoginController::class . '@index');
         $router->post('/', LoginController::class . '@showMessageLogin');
@@ -46,7 +46,7 @@ class Application
 
 
         $router->get('panel',PanelController::class . '@index');
-
+        $router->get('panel/{id}',PanelController::class . '@actionCrud');        
 
         $response = $router->dispatch(Request::capture());
         $response->send();

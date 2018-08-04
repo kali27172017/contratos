@@ -3,7 +3,7 @@ namespace App\Helpers;
 
 class Session {
 
-      public static function sessionUSer($post){   
+      public static function sessionUSer($post){
            $_SESSION['administrador'] = $post["admin"];
            $_SESSION['password'] = $post["clave"];
       }

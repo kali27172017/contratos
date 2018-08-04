@@ -79,6 +79,13 @@ body{
 }
 
 
+.messageBirth,.messageDni{
+	color:red;
+	font-family: 'lato';
+	font-weight:bold;
+}
+
+
 
 
 

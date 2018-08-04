@@ -7,36 +7,38 @@
 					{%  if usuario %}
 							<strong>{{ usuario }} </strong>
 				  {% endif %} 
-         <a href="http://localhost:80/contratos/public/"><i class="fas fa-sign-out-alt"></i></a>
+         <a href="http://localhost:8080/contratos/public/"><i class="fas fa-sign-out-alt"></i></a>
   	  </h4>
   </div> 	  
   <div class="dashboard-welcomeContent">
   	       <h3>Registrar Docente</h3>
            <form method="post" class="register"  id="formRegister" name="fregister">
-                <div class="register_nombre">
+             <div class="register_nombre">
             	  <label for="nombre">Nombre</label>
-			      <input type="text" name="nombre" id="nombre" >	
-                </div>
+			          <input type="text" name="nombre" id="nombre" required>	
+              </div>
 			
-			    <div class="register_apellido">
-			      <label for="apellido">Apellido</label>
-			      <input type="text" name="apellido" id="apellido" >	
-			    </div>
+			       <div class="register_apellido">
+			         <label for="apellido">Apellido</label>
+			         <input type="text" name="apellido" id="apellido" required>	
+			       </div>
 
-			    <div class="register_dni">
-			      <label for="dni">Dni</label>
-			      <input type="text" name="dni" id="dni">	
-			    </div>
+			       <div class="register_dni">
+			         <label for="dni">Dni</label>
+			         <input type="text" name="dni" id="dni" maxlength="8" required>	
+							 <span id="messageDni" class="messageDni"></span>
+			       </div>
 
-			    <div class="register_fecha">
-			      <label for="register_fecha">Fecha Nacimiento</label>
-			      <input type="date" name="fecha" id="fecha" value={{fecha}}>
-			    </div>
+			      <div class="register_fecha">
+			        <label for="register_fecha">Fecha Nacimiento</label>
+			        <input type="date" name="fecha" id="fecha" required>
+							<span id="messageBirth" class="messageBirth"></span>
+			       </div>
 
-			    <div class="register_domicilio">
-			      <label for="domicilio">Domicilio</label>
-			      <input type="text" name="domicilio" id="domicilio" >	
-			    </div>
+			      <div class="register_domicilio">
+			        <label for="domicilio">Domicilio</label>
+			        <input type="text" name="domicilio" id="domicilio" required>	
+			      </div>
 
 			 
 
@@ -49,30 +51,29 @@
 			        </select>	
 			    </div>
 
-			     <div class="register_escuela">
+			    <div class="register_escuela">
                     <label for="register_escuela">Escuela</label> 
 			    	<select name="escuelas" id="escuelas" class="escuelas" required>
 			    		  {% for escuela in escuelas %}
                               <option  value="{{escuela.id_escuela}}">{{escuela.nombre_escuela}}</option>
 			    		  {% endfor %}	
 			    	</select>
-					
 			    </div>
 
 			    
 			    <div class="register_ciclo">
 			    	 <label for="register_ciclo">Ciclo Academico</label>
-			    	 <input type="text" name="ciclo" id="ciclo" placeholder="Ejemplo: 2018-I" >  
+			    	 <input type="text" name="ciclo" id="ciclo" placeholder="Ejemplo: 2018-I" required>  
 			    </div>
 
 			    <div class="register_fechainicio">
 			       <label for="register_fechainicio">Fecha Inicio Ciclo</label>
-				   <input type="date" name="fecha_iniciociclo" id="fecha_iniciociclo" value={{fecha}}>					    	
+				   <input type="date" name="fecha_iniciociclo" id="fecha_iniciociclo" value={{fecha}} required>					    	
 			    </div>
 
 			    <div class="register_fechafin">
 			    	<label for="register_fechafin">Fecha Fin Ciclo</label>
-			    	<input type="date" name="fecha_finciclo" id="fecha_finciclo">
+			    	<input type="date" name="fecha_finciclo" id="fecha_finciclo" required>
 			    </div>
 				
 				<input type="submit" value="REGISTRAR" id="register_submit" class="register_submit">
@@ -81,5 +82,5 @@
 {% endblock %}
 
 {% block script %}
-	<script src="../dist/js/dashboard.js"> </script>
+	<script src="http://localhost:9000/js/dashboard.js"> </script>
 {% endblock %}	
